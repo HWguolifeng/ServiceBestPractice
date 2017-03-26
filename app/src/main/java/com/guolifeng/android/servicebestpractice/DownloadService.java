@@ -85,6 +85,7 @@ public class DownloadService extends Service
                 downloadUrl = url;
                 downloadTask = new DownloadTask(listener);
                 downloadTask.execute(downloadUrl);
+                //开启前台服务
                 startForeground(1, getNotification("Downloading...", 0));
                 Toast.makeText(DownloadService.this, "Downloading...", Toast.LENGTH_SHORT).show();
             }
